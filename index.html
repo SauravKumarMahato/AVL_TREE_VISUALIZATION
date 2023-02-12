@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <title>D3 Tutorials</title>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <style>
+    body{
+        background-color: lightblue;
+        font-family: monospace;
+    }
+
+    #diagram{
+        margin:auto;
+        justify-content: center;
+    }
+
+    .container{
+        margin-top: 0px;
+        display: grid;
+        place-items: center;
+        padding: 20px;
+        background-color:#489c5e;        
+    }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+        <h1 id="heading">AVL TREE VISUALIZER</h1>
+        <table id="operationTable"> <td><input type="Text" value="" size="4"></td><td><input type="Button" value="Insert"></td><td><input type="Text" value="" size="4"></td><td><input type="Button" value="Delete"></td><td><input type="Text" value="" size="4"></td><td><input type="Button" value="Find"></td><td><input type="Button" value="Print"></td></table>
+    </div>
+    <script>
+
+        canvas_height = 1000;
+        canvas_width = 1000;
+      var canvas = d3
+        .select("body")
+        .append("svg")
+        .attr("width", canvas_width)
+        .attr("height", canvas_height)
+        .append("g")
+        .attr("transform", "translate(50, 50)")
+        .attr("id", "diagram")
+
+      var tree = d3.layout.tree().size([800, 200]);
+
+      d3.json("mydata.json", function (data) {
+        var nodes = tree.nodes(data);
+        var links = tree.links(nodes);
+
+        var node = canvas
+          .selectAll(".node")
+          .data(nodes)
+          .enter()
+          .append("g")
+          .attr("class", "node")
+          .attr("transform", function (d) {
+            return "translate(" + d.x + "," + d.y + ")";
+          });
+
+        node.append("circle").attr("r", 30).attr("fill", "#489c5e");
+
+        node
+          .append("text")
+          .text(function (d) {
+            return d.value;
+          })
+          .attr("fill", "black")
+          .attr("text-anchor", "middle")
+          .attr("transform", "scale(1.5)");
+
+        var diagonal = d3.svg.diagonal();
+
+        canvas
+          .selectAll(".link")
+          .data(links)
+          .enter()
+          .append("path")
+          .attr("class", "link")
+          .attr("fill", "none")
+          .attr("stroke", "#489c5e")
+          .attr("d", diagonal);
+      });
+    </script>
+  </body>
+</html>
