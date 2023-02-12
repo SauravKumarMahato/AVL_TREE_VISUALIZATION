@@ -8,10 +8,9 @@
         font-family: monospace;
     }
 
-    #diagram{
-        margin:auto;
-        justify-content: center;
-    }
+    /* #diagram{
+        
+    } */
 
     .container{
         margin-top: 0px;
@@ -20,6 +19,21 @@
         padding: 20px;
         background-color:#489c5e;        
     }
+    
+    #inputBox{
+        width: 100px;
+        border: 2px solid rgb(13, 98, 53);
+        padding: 5px 5px;
+        border-radius: 5px;
+    }
+    
+    #buttonClick{
+        border-radius: 10px;
+        border: 2px solid rgb(13, 98, 53);
+        padding: 5px 20px;
+        background-color: lightblue ;    
+        margin-right: 50px;
+    }
 
     </style>
   </head>
@@ -27,22 +41,27 @@
   <body>
     <div class="container">
         <h1 id="heading">AVL TREE VISUALIZER</h1>
-        <table id="operationTable"> <td><input type="Text" value="" size="4"></td><td><input type="Button" value="Insert"></td><td><input type="Text" value="" size="4"></td><td><input type="Button" value="Delete"></td><td><input type="Text" value="" size="4"></td><td><input type="Button" value="Find"></td><td><input type="Button" value="Print"></td></table>
+        <table id="operationTable">
+            <td><input type="Text"  id = "inputBox" name="" ></td>
+            <td><input type="Button" value="Insert" id = "buttonClick" ></td>
+            <td><input type="Text" id = "inputBox" value="" ></td>
+            <td><input type="Button" value="Delete" id = "buttonClick" ></td>
+            <td><input type="Text" id = "inputBox" value="" ></td>
+            <td><input type="Button" value="Search" id = "buttonClick" ></td>
+        </table>
     </div>
     <script>
 
         canvas_height = 1000;
         canvas_width = 1000;
-      var canvas = d3
-        .select("body")
-        .append("svg")
+      var canvas = d3.select("body").append("svg")
         .attr("width", canvas_width)
         .attr("height", canvas_height)
         .append("g")
         .attr("transform", "translate(50, 50)")
         .attr("id", "diagram")
 
-      var tree = d3.layout.tree().size([800, 200]);
+      var tree = d3.layout.tree().size([1000, 200]);
 
       d3.json("mydata.json", function (data) {
         var nodes = tree.nodes(data);
