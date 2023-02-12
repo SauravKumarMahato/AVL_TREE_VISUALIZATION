@@ -2,44 +2,9 @@
   <head>
     <title>D3 Tutorials</title>
     <script src="https://d3js.org/d3.v3.min.js"></script>
-    <style>
-    body{
-        background-color: lightblue;
-        font-family: monospace;
-    }
-
-    /* #diagram{
-        
-    } */
-
-    .container{
-        margin-top: 0px;
-        display: grid;
-        place-items: center;
-        padding: 20px;
-        background-color:#489c5e;        
-    }
-    
-    #inputBox{
-        width: 100px;
-        border: 2px solid rgb(13, 98, 53);
-        padding: 5px 5px;
-        border-radius: 5px;
-    }
-    
-    #buttonClick{
-        border-radius: 10px;
-        border: 2px solid rgb(13, 98, 53);
-        padding: 5px 20px;
-        background-color: rgb(158, 227, 174) ;    
-        margin-right: 50px;
-    }
-
-    #buttonClick:hover{
-        background-color: rgb(129, 177, 220) ;    
-    }
-
-    </style>
+    <!-- CSS IS LINKED HERE -->
+    <link rel="stylesheet" type="" href="./style.css">
+   
   </head>
 
   <body>
@@ -54,56 +19,8 @@
             <td><input type="Button" value="Search" id = "buttonClick" ></td>
         </table>
     </div>
-    <script>
 
-        canvas_height = 1000;
-        canvas_width = 1000;
-      var canvas = d3.select("body").append("svg")
-        .attr("width", canvas_width)
-        .attr("height", canvas_height)
-        .append("g")
-        .attr("transform", "translate(50, 50)")
-        .attr("id", "diagram")
-
-      var tree = d3.layout.tree().size([1000, 200]);
-
-      d3.json("mydata.json", function (data) {
-        var nodes = tree.nodes(data);
-        var links = tree.links(nodes);
-
-        var node = canvas
-          .selectAll(".node")
-          .data(nodes)
-          .enter()
-          .append("g")
-          .attr("class", "node")
-          .attr("transform", function (d) {
-            return "translate(" + d.x + "," + d.y + ")";
-          });
-
-        node.append("circle").attr("r", 30).attr("fill", "#489c5e");
-
-        node
-          .append("text")
-          .text(function (d) {
-            return d.value;
-          })
-          .attr("fill", "black")
-          .attr("text-anchor", "middle")
-          .attr("transform", "scale(1.5)");
-
-        var diagonal = d3.svg.diagonal();
-
-        canvas
-          .selectAll(".link")
-          .data(links)
-          .enter()
-          .append("path")
-          .attr("class", "link")
-          .attr("fill", "none")
-          .attr("stroke", "#489c5e")
-          .attr("d", diagonal);
-      });
-    </script>
+    <!-- SCRIPT WILL BE INJECTED HERE -->
+    <script src="./script.js"></script>
   </body>
 </html>
