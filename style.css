@@ -1,0 +1,35 @@
+body{
+    background-color: lightblue;
+    font-family: monospace;
+}
+
+/* #diagram{
+    
+} */
+
+.container{
+    margin-top: 0px;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    background-color:#489c5e;        
+}
+
+#inputBox{
+    width: 100px;
+    border: 2px solid rgb(13, 98, 53);
+    padding: 5px 5px;
+    border-radius: 5px;
+}
+
+#buttonClick{
+    border-radius: 10px;
+    border: 2px solid rgb(13, 98, 53);
+    padding: 5px 20px;
+    background-color: rgb(158, 227, 174) ;    
+    margin-right: 50px;
+}
+
+#buttonClick:hover{
+    background-color: rgb(129, 177, 220) ;    
+}
