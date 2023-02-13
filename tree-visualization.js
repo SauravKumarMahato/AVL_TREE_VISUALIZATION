@@ -4,14 +4,21 @@ var duration = 400;
 
 var tree = d3.tree().separation(function () { return 40; });
 
+let width = screen.width;
+let height = screen.height;
+
 var svg = d3.select('svg'),
-	g = svg.append('g').attr('transform', 'translate(40,40)');
+	g = svg.append('g').attr('transform', 
+	function(){
+		return "translate" + "(" + width/2.2 + "," + height/8 + ")"  ;
+	});
 
 var gLinks = g.append('g'),
 	gNodes = g.append('g');
 
-svg.attr('width', '1280')
-	.attr('height', '720');
+svg.attr('width', width/1.05)
+	.attr('height', height/1.5)
+	.attr("class","svg");
 
 var oldPos = {};
 var updateTree = function () {
