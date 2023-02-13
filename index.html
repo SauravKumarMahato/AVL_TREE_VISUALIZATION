@@ -3,22 +3,41 @@
     <title>D3 Tutorials</title>
     <script src="https://d3js.org/d3.v3.min.js"></script>
     <!-- CSS IS LINKED HERE -->
-    <link rel="stylesheet" type="" href="./style.css">
-   
+    <link rel="stylesheet" type="" href="./style.css" />
   </head>
 
   <body>
     <div class="container">
-        <h1 id="heading">AVL TREE VISUALIZER</h1>
-        <table id="operationTable">
-            <td><input type="Text"  id = "inputBox" name="" ></td>
-            <td><input type="Button" value="Insert" id = "buttonClick" ></td>
-            <td><input type="Text" id = "inputBox" value="" ></td>
-            <td><input type="Button" value="Delete" id = "buttonClick" ></td>
-            <td><input type="Text" id = "inputBox" value="" ></td>
-            <td><input type="Button" value="Search" id = "buttonClick" ></td>
-        </table>
+      <h1 id="heading">AVL TREE VISUALIZER</h1>
+      <div class="inputSubmit">
+        <form id="insertTree" onSubmit="return handleInsert()" >
+          <input
+            id="insertInput"
+            type="text"
+            placeholder="Number to insert"
+            maxlength="4"
+            size="14"
+            autofocus
+          />
+          <input type="submit" value="Insert" id="buttonClick" />
+        </form>
+        <form id="deleteTree" onSubmit="return handleDelete()">
+          <input
+            id="deleteInput"
+            type="text"
+            placeholder="Number to delete"
+            maxlength="4"
+            size="14"
+          />
+          <input type="submit" value="Delete"  id="buttonClick"/>
+        </form>
+      </div>
     </div>
+    <svg></svg>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="tree-creation.js"></script>
+    <script src="tree-visualization.js"></script>
 
     <!-- SCRIPT WILL BE INJECTED HERE -->
     <script src="./script.js"></script>
