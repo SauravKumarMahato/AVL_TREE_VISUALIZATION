@@ -9,11 +9,15 @@ body {
     justify-self: center;
 } */
 
+#heading{
+    font-size: 30px;
+}
+
 .container {
     margin-top: 0px; 
     display: grid;
     place-items: center;
-    padding: 15px;
+    padding: 10px;
     background-color: #489c5e;
 }
 
