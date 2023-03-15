@@ -1,2 +1,6 @@
 # AVL_TREE_VISUALIZATION
 AVL tree visualization is a graphical representation of an AVL tree data structure that enables easier understanding and analysis of its operations and performance.
+
+An AVL tree is a self-balancing binary search tree in which the heights of the left and right subtrees of any node differ by at most one. This property ensures that the tree remains balanced and that the performance of insertion, deletion, and search operations is optimal, with a worst-case time complexity of O(log n). AVL trees are named after their inventors, Adelson-Velskii and Landis.
+
+AVL tree visualization is a graphical representation of an AVL tree data structure that enables easier understanding and analysis of its operations and performance. Visualization tools and techniques help users to see how the tree is structured, how it changes as nodes are added or removed, and how its height is maintained through the rotation of nodes. By visualizing the AVL tree, users can gain a deeper understanding of how it works and how to optimize its performance for different use cases. They can also use it to debug issues and errors in the implementation of AVL trees in their software projects. Overall, AVL tree visualization is an essential tool for developers and computer science students who want to learn and master AVL trees.
