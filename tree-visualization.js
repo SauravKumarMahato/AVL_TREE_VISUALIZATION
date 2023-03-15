@@ -28,8 +28,8 @@ var updateTree = function () {
   var root = d3.hierarchy(data);
 
   var newTreeSize = [
-    root.descendants().length * 40,
-    ((root.height + 1) * 2 - 1) * 30,
+    root.descendants().length * 40, // length of link
+    ((root.height + 1) * 2 - 1) * 20,  // length betweeen nodes
   ];
 
   if (tree.size()[0] !== newTreeSize[0] || tree.size()[1] !== newTreeSize[1]) {
