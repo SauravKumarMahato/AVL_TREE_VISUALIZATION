@@ -260,7 +260,8 @@ var balance = function (node, callback) {
 var insert = function (n, callback) {
   console.log("Insert", n);
   if (!n || !Number.isInteger(n)) {
-    alert("please enter number");
+    swal("Please enter number");
+    callback();
     return;
   }
 
