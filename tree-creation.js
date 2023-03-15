@@ -272,7 +272,6 @@ var insert = function (n, callback) {
   var walker = data,
     newNode;
 
-  // var repeat = false;
   while (!newNode) {
     if (n === walker.data) {
       alert("Repetition not allowed ! ! !");
