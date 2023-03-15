@@ -224,7 +224,7 @@ var balance = function (node, callback) {
         updateTree();
         setTimeout(function () {
           rotateRight(node, updateTree);
-        }, duration);
+        }, duration*defer);
       });
     }
   } else if (hRight - hLeft >= 2) {
@@ -235,13 +235,15 @@ var balance = function (node, callback) {
     if (hr >= hl) {
       // Right of right
       rotateLeft(node, updateTree);
+      defer = 1;
     } else {
       // Left of right
+      defer = 3;
       rotateRight(rightChild, function () {
         updateTree();
         setTimeout(function () {
           rotateLeft(node, updateTree);
-        }, duration);
+        }, duration*defer);
       });
     }
   }
