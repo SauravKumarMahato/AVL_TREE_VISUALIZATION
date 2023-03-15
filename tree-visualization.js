@@ -1,6 +1,6 @@
 /*************Binary Search Tree Visualization using D3JS *************/
 
-var duration = 4000;
+var duration = 1000;
 
 var tree = d3.tree().separation(function () {
   return 40;
