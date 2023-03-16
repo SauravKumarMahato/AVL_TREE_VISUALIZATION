@@ -24,20 +24,20 @@ var rotateLeft = function (node, callback) {
     leftChild = node.children[0],
     rightChild = node.children[1];
 
-  // if (rightChild.children.length === 0) { 
-  //   rightChild.children.push({
-  //     id: id++,
-  //     data: null,
-  //     parent: rightChild,
-  //     children: [],
-  //   });
-  //   rightChild.children.push({
-  //     id: id++,
-  //     data: null,
-  //     parent: rightChild,
-  //     children: [],
-  //   });
-  // }
+  if (rightChild.children.length === 0) {
+    rightChild.children.push({
+      id: id++,
+      data: null,
+      parent: rightChild,
+      children: [],
+    });
+    rightChild.children.push({
+      id: id++,
+      data: null,
+      parent: rightChild,
+      children: [],
+    });
+  }
 
   if (parent === null) {
     // Root node
@@ -92,7 +92,9 @@ var rotateLeft = function (node, callback) {
     node.children = [];
 
   setTimeout(function () {
+    if (callback instanceof Function) {
       callback();
+    }
   }, duration);
 };
 
@@ -101,20 +103,20 @@ var rotateRight = function (node, callback) {
     leftChild = node.children[0],
     rightChild = node.children[1];
 
-  // if (leftChild.children.length === 0) {
-  //   leftChild.children.push({
-  //     id: id++,
-  //     data: null,
-  //     parent: leftChild,
-  //     children: [],
-  //   });
-  //   leftChild.children.push({
-  //     id: id++,
-  //     data: null,
-  //     parent: leftChild,
-  //     children: [],
-  //   });
-  // }
+  if (leftChild.children.length === 0) {
+    leftChild.children.push({
+      id: id++,
+      data: null,
+      parent: leftChild,
+      children: [],
+    });
+    leftChild.children.push({
+      id: id++,
+      data: null,
+      parent: leftChild,
+      children: [],
+    });
+  }
 
   if (parent === null) {
     // Root node
@@ -169,7 +171,9 @@ var rotateRight = function (node, callback) {
     node.children = [];
 
   setTimeout(function () {
+    if (callback instanceof Function) {
       callback();
+    }
   }, duration);
 };
 
