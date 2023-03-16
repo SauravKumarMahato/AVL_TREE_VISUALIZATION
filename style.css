@@ -4,6 +4,8 @@ body {
     margin: auto;
 }
 
+
+/* ------------------------------------- CSS FOR AVL TREE NODES AND LINES ---------------------------------- */
 /* .svg{
     display: grid;
     justify-self: center;
@@ -73,7 +75,7 @@ form {
 }
 
 
-/* CSS FOR INPUT SLIDER  */
+/* --------------------------- CSS FOR INPUT SLIDER ------------------------------------  */
 
 pre {
     padding: 20px 20px 0 0;
