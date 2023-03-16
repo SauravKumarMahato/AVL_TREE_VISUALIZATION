@@ -7,6 +7,64 @@
 
     <link rel="stylesheet" href="css/rSlider.min.css" />
     <link rel="stylesheet" href="css/rSlider.css" />
+
+    <style>
+      /* --------------------------- CSS FOR INPUT SLIDER ------------------------------------  */
+
+      pre {
+        padding: 20px 20px 0 0;
+        background: #f9f9f9;
+        border: 1px solid #f2f2f2;
+        margin-bottom: 30px;
+        line-height: 2em;
+      }
+      .top {
+        background-color: #333;
+        border-bottom: 3px solid #00b3bc;
+        color: #fff;
+        padding: 20px;
+      }
+      .top h1 {
+        font-size: 20px;
+        text-align: center;
+      }
+      .slider-container {
+        width: 90%;
+        max-width: 500px;
+        margin: 0 auto 50px;
+      }
+      .config {
+        border: 1px solid #f2f2f2;
+        margin-bottom: 30px;
+        line-height: 1.7em;
+      }
+      .config table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      .config table td {
+        padding: 10px;
+        border-bottom: 1px solid #f2f2f2;
+      }
+      .config table tr:nth-child(even) td {
+        background-color: #f9f9f9;
+      }
+      .mb {
+        margin-bottom: 15px;
+      }
+      .label {
+        font-weight: bold;
+        white-space: nowrap;
+      }
+      .download {
+        margin-bottom: 20px;
+      }
+      .download a {
+        text-decoration: none;
+        color: #00969b;
+        font-size: 16px;
+      }
+    </style>
   </head>
 
   <body>
@@ -38,15 +96,30 @@
       </div>
     </div>
     <svg></svg>
+
+    <!-- SCRIPTS -->
     <script src="d3js.js"></script>
     <script src="./js/sweetswal.js"></script>
-    <script src="tree-creation.js"></script>
-    <script src="tree-visualization.js"></script>
 
-    <!-- SCRIPT WILL BE INJECTED HERE -->
-    <script src="./script.js"></script>
-
+    <!-- INPUT SLIDER -->
     <script src="js/rSlider.min.js"></script>
     <script src="js/rSlider.js"></script>
+
+    <!-- <script>
+      var slider2 = new rSlider({
+        target: "#slider2",
+        values: [1, 2, 3, 4, 5,6,7,8,9,10],
+        range: false,
+        set: [10],
+        tooltip: false,
+        onChange: function (vals) {
+          console.log("vals = ", vals);
+        },
+      });
+    </script> -->
+
+    <!-- TREE CREATION AND VISUALIZATION -->
+    <script src="tree-creation.js"></script>
+    <script src="tree-visualization.js"></script>
   </body>
 </html>
