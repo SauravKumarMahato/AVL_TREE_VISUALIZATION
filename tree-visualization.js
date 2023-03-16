@@ -29,7 +29,7 @@ var updateTree = function () {
 
   var newTreeSize = [
     root.descendants().length * 40, // length of link
-    ((root.height + 1) * 2 - 1) * 20,  // length betweeen nodes
+    ((root.height + 1) * 2 - 1) * 30, // length betweeen nodes
   ];
 
   if (tree.size()[0] !== newTreeSize[0] || tree.size()[1] !== newTreeSize[1]) {
