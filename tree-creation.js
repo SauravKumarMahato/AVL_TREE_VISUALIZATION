@@ -92,9 +92,7 @@ var rotateLeft = function (node, callback) {
     node.children = [];
 
   setTimeout(function () {
-    if (callback instanceof Function) {
       callback();
-    }
   }, duration);
 };
 
@@ -103,20 +101,20 @@ var rotateRight = function (node, callback) {
     leftChild = node.children[0],
     rightChild = node.children[1];
 
-  if (leftChild.children.length === 0) {
-    leftChild.children.push({
-      id: id++,
-      data: null,
-      parent: leftChild,
-      children: [],
-    });
-    leftChild.children.push({
-      id: id++,
-      data: null,
-      parent: leftChild,
-      children: [],
-    });
-  }
+  // if (leftChild.children.length === 0) {
+  //   leftChild.children.push({
+  //     id: id++,
+  //     data: null,
+  //     parent: leftChild,
+  //     children: [],
+  //   });
+  //   leftChild.children.push({
+  //     id: id++,
+  //     data: null,
+  //     parent: leftChild,
+  //     children: [],
+  //   });
+  // }
 
   if (parent === null) {
     // Root node
@@ -138,7 +136,7 @@ var rotateRight = function (node, callback) {
       .datum(d3.hierarchy(node).descendants()[0]);
     changeRoot = true;
   } else if (node === parent.children[0]) {
-    // Left child of parent
+    // Node is Left child of parent
     leftChild.children[1].parent = node;
     node.children[0] = leftChild.children[1];
 
@@ -150,7 +148,7 @@ var rotateRight = function (node, callback) {
 
     changeRoot = false;
   } else if (node === parent.children[1]) {
-    // Left child of parent
+    // Node is right child of parent
     leftChild.children[1].parent = node;
     node.children[0] = leftChild.children[1];
 
@@ -171,9 +169,7 @@ var rotateRight = function (node, callback) {
     node.children = [];
 
   setTimeout(function () {
-    if (callback instanceof Function) {
       callback();
-    }
   }, duration);
 };
 
